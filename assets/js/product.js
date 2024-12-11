@@ -217,13 +217,13 @@ function displayProduct(list, element) {
 
 function filterByPriceRange(products, minPrice, maxPrice) {
   return products.filter((product) => {
-    const price = parseFloat(product.price); // Chuyển giá thành số thực
-    return price >= minPrice && price <= maxPrice; // Kiểm tra giá trong khoảng
+    const price = parseFloat(product.price); 
+    return price >= minPrice && price <= maxPrice; 
   });
 }
 
 function viewProductDetail(code) {
-  window.location = `product-detail.html?productId=${code}`; // Điều hướng đến trang chi tiết
+  window.location = `product-detail.html?productId=${code}`; 
 }
 
 // product detail page
@@ -332,7 +332,6 @@ function setupPreviewImg() {
   const previewImage = document.querySelector(".prod-preview__main-img");
   thumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener("click", () => {
-      // Lấy URL của hình nhỏ và set vào hình lớn
       thumbnails.forEach((thumb) => thumb.classList.remove("prod-preview__thumb-img--current"));
       previewImage.src = thumbnail.src;
       thumbnail.classList.add("prod-preview__thumb-img--current");
@@ -345,7 +344,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Hàm Decrease
 const decrease = (key, isCheckout = false) => {
-  // Lấy giá trị số lượng hiện tại
   let quantitySpan = document.querySelector(`.cart-item__quantity[data-id="${key}"]`);
   let totalSpan = document.querySelector(`.cart-item__total-price[data-id="${key}"]`);
   let currentQuantity = parseInt(quantitySpan.textContent);
@@ -374,7 +372,6 @@ const decrease = (key, isCheckout = false) => {
 };
 // Hàm Increase
 const increase = (key, isCheckout = false) => {
-  // Lấy giá trị số lượng hiện tại
 
   let quantitySpan = document.querySelector(`.cart-item__quantity[data-id="${key}"]`);
   let totalSpan = document.querySelector(`.cart-item__total-price[data-id="${key}"]`);
