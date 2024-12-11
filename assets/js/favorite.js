@@ -10,11 +10,11 @@ function updateFavorites() {
     let icon = button.querySelector(".like-btn__icon");
     const isFavorited = favorites.some((item) => item.id == productId);
     if (isFavorited) {
-      icon.src = "../assets/icons/heart-red.svg"; // Icon yêu thích
-      icon.classList.remove("icon"); // Xóa lớp icon nếu có
+      icon.src = "../assets/icons/heart-red.svg"; 
+      icon.classList.remove("icon"); 
     } else {
-      icon.src = "../assets/icons/heart.svg"; // Icon bình thường
-      icon.classList.add("icon"); // Thêm lớp icon
+      icon.src = "../assets/icons/heart.svg"; 
+      icon.classList.add("icon"); 
     }
   });
   // Cập nhật số lượng yêu thích
@@ -51,12 +51,12 @@ function addToFavorite(code) {
   if (itemIndex == -1) {
     let item = productList.find((x) => x.id == code);
     favorites.push(item);
-    icon.src = "../assets/icons/heart-red.svg"; // Icon yêu thích
-    icon.classList.remove("icon"); // Xóa lớp icon nếu có
+    icon.src = "../assets/icons/heart-red.svg"; 
+    icon.classList.remove("icon"); 
   } else {
     favorites.splice(itemIndex, 1);
-    icon.src = "../assets/icons/heart.svg"; // Icon bình thường
-    icon.classList.add("icon"); // Thêm lớp icon
+    icon.src = "../assets/icons/heart.svg"; 
+    icon.classList.add("icon"); 
   }
   if (favorites.length > 0) {
     localStorage.setItem("favoriteList", JSON.stringify(favorites));
@@ -141,11 +141,11 @@ function displayFavorite(idElement) {
   }
 
   document.getElementById("checkAll").addEventListener("change", function () {
-    const isChecked = this.checked; // Trạng thái của checkbox "Check All"
+    const isChecked = this.checked; 
     const itemCheckboxes = document.querySelectorAll(".cart-info__checkbox-input");
 
     itemCheckboxes.forEach((checkbox) => {
-      checkbox.checked = isChecked; // Đồng bộ trạng thái các checkbox con
+      checkbox.checked = isChecked; 
     });
   });
 }
@@ -162,13 +162,4 @@ function removeFavorite(code) {
   location.reload();
 }
 
-// function checkAll() {
-//   document.getElementById("checkAll").addEventListener("change", function () {
-//     const isChecked = this.checked; // Trạng thái của checkbox "Check All"
-//     const itemCheckboxes = document.querySelectorAll(".cart-info__checkbox-input");
 
-//     itemCheckboxes.forEach((checkbox) => {
-//       checkbox.checked = isChecked; // Đồng bộ trạng thái các checkbox con
-//     });
-//   });
-// }
