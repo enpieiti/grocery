@@ -1,0 +1,73 @@
+@use "../abstracts";
+.slideshow {
+  position: relative;
+  overflow: hidden; /* Chỉ hiển thị slide trong vùng này */
+
+  &__inner {
+    display: flex;
+    //     overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+  }
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    padding-top: 30%;
+    @include abstracts.screen(lg) {
+      padding-top: 50%;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  &__btn {
+    position: absolute;
+    z-index: 6; /* Đặt trên slide */
+    pointer-events: auto; /* Đảm bảo button nhận sự kiện click */
+    display: flex;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background: #bbbbbb4f;
+    border-radius: 3px;
+    top: 45%;
+
+    &--prev {
+      margin-left: 9px;
+    }
+    &--next {
+      right: 0;
+
+      margin-right: 9px;
+    }
+  }
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+  &__dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    &--active {
+      background-color: #77dae6;
+    }
+  }
+}

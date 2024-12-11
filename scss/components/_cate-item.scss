@@ -1,0 +1,44 @@
+@use "../abstracts";
+.cate-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--cate-bg);
+  @include abstracts.screen(xl) {
+    flex-direction: column;
+  }
+  @include abstracts.screen(md) {
+    flex-direction: row;
+    background: var(--cate-bg);
+  }
+  &__thumb {
+    display: block;
+    width: 116px;
+    height: 116px;
+    border-radius: 5px;
+    background: var(--cate-thumb-bg);
+    object-fit: contain;
+    @include abstracts.screen(xl) {
+      width: 100%;
+      height: 150px;
+    }
+    @include abstracts.screen(md) {
+      width: 88px;
+      height: 88px;
+    }
+  }
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 145.455%;
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+    }
+  }
+  &__desc {
+    //     margin-top: auto;
+  }
+}

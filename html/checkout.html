@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" codehref="../assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/product.js"></script>
+    <script src="../assets/js/favorite.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../templates/header-login.html");
+    </script>
+    <!-- main -->
+    <main class="checkout-page">
+      <div class="container">
+        <!-- search bar -->
+        <div class="checkout-container">
+          <div class="search-bar d-none d-md-flex checkout__search-bar">
+            <input type="text" name="" id="" placeholder="Search for item" class="search-bar__input" />
+            <button class="search-bar__submit">
+              <img src="../assets/icons/search.svg" alt="" class="search-bar__icon icon" />
+            </button>
+          </div>
+        </div>
+        <!-- Breadcrumbs -->
+        <div class="checkout-container">
+          <ul class="breadcrumbs checkout-page__breadcrumbs">
+            <li>
+              <a href="" class="breadcrumbs__link">
+                Home
+                <img src="../assets/icons/arrow-right.svg" alt="" />
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="breadcrumbs__link--current">Checkout</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- checkout content -->
+        <div class="checkout-container">
+          <div class="row gy-xl-3">
+            <div class="col-8 col-xl-12">
+              <div class="cart-info">
+                <div class="cart-info__list" id="cartId">
+                  <div class="cartEmpty"></div>
+                </div>
+                <div class="cart-info__bottom d-md-none">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="cart-info__continue">
+                        <a href="./" class="cart-info__continue-link">
+                          <img src="../assets/icons/arrow-down2.svg" alt="" class="icon cart-info__continue-icon" />
+                          Continue Shopping
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="cart-info__row">
+                        <span>Subtotal:</span>
+                        <span class="totalPrice"></span>
+                      </div>
+                      <div class="cart-info__row">
+                        <span>Shipping:</span>
+                        <span>$10.00</span>
+                      </div>
+                      <div class="cart-info__separate"></div>
+                      <div class="cart-info__row cart-info__row--bold">
+                        <span>Total:</span>
+                        <span class="total">$201.65</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 col-xl-12">
+              <div class="cart-info">
+                <div class="cart-info__row">
+                  <span>Items</span>
+                  <span class="numberCart">3</span>
+                </div>
+                <div class="cart-info__row">
+                  <span>Subtotal</span>
+                  <span class="totalPrice">$191.65</span>
+                </div>
+                <div class="cart-info__row">
+                  <span>Shipping</span>
+                  <span>$10.00</span>
+                </div>
+                <div class="cart-info__separate"></div>
+                <div class="cart-info__row cart-info__row--bold">
+                  <span>Estimated Total</span>
+                  <span class="total">$201.65</span>
+                </div>
+                <a href="../html/shipping.html" class="cart-info__next-btn btn btn--primary btn--rounded">
+                  Continue to checkout
+                </a>
+              </div>
+              <div class="cart-info">
+                <a href="#!">
+                  <article class="gift-item">
+                    <div class="gift-item__icon-wrap">
+                      <img src="../assets/icons/gift.svg" alt="" class="gift-item__icon" />
+                    </div>
+                    <div class="gift-item__content">
+                      <h3 class="gift-item__title">Send this order as a gift.</h3>
+                      <p class="gift-item__desc">Available items will be shipped to your gift recipient.</p>
+                    </div>
+                  </article>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "../templates/footer.html");
+    </script>
+    <script>
+      displayCart(cartId);
+      updateFavorites();
+      updateCart();
+      totalCart();
+    </script>
+  </body>
+</html>

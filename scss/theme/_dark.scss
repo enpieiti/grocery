@@ -1,0 +1,84 @@
+@use "../abstracts";
+html.dark {
+  --text-color: #fff;
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(168deg) brightness(100%)
+    contrast(103%);
+  --body-bg: #292e39;
+  // auth
+  --auth-content-bg: #292e39;
+  --auth-intro-text-color: #b9babe;
+  --auth-intro-bg: #171c28;
+  --auth-heading-color: #b9babe;
+  // form
+  --form-tag: #171c28;
+  --form-select-dialog-bg: #2f3441;
+  // header
+  --header-bg: #171c28;
+  --top-act-group-bg: #292e39;
+  --top-act-group-shadow: rgba(0, 0, 0, 0.2);
+  --top-act-group-separate: #545458;
+
+  --header-act-dropdown-bg: #2f3441;
+  --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
+  --header-act-dropdown-border-color: #171c28;
+
+  // dropdown
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(27%) saturate(487%) hue-rotate(185deg)
+    brightness(89%) contrast(88%);
+  --dropdown-bg: #292e39;
+  --dropdown-shadow: rgba(23, 28, 40, 0.4);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(18%) saturate(576%) hue-rotate(183deg)
+    brightness(92%) contrast(94%);
+  --sidebar-bg: #292e39;
+  --sidebar-shadow: rgba(23, 28, 40, 0.4);
+  //categories
+  --cate-bg: #171c28;
+  --cate-thumb-bg: #292e39;
+  //filter
+  --filter-btn-bg: #171c28;
+  --filter-color: #fff;
+  --filter-bg: #292e39;
+  --filter-shadow: rgba(0, 0, 0, 0.4);
+  --filter-form-arrow: brightness(0) saturate(100%) invert(16%) sepia(21%) saturate(544%) hue-rotate(182deg)
+    brightness(91%) contrast(92%);
+  //product
+  --product-card-bg: #171c28;
+  --product-card-shadow: rgba(0, 0, 0, 0.2);
+  //footer
+  --footer-bg-color: var(--header-bg);
+  // product detail
+  --product-detail-bg: #292e39;
+  --product-detail-info-bg: #171c28;
+  --product-detail-tag-bg: #292e39;
+  // breadcrumbs
+  --breadcrumbs-bg: #171c28;
+  --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
+  @include abstracts.screen(md) {
+    --breadcrumbs-bg: #171c28;
+  }
+
+  // review
+  --review-card-bg: #171c28;
+
+  // Search bar
+  --search-bar-bg: #171c28;
+  // checkout
+  --checkout-breadcrumbs-bg: #171c28;
+  --checkout-cart-info-bg: #171c28;
+  --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
+  --checkout-border-color: #292e39;
+
+  // modal
+  --dialog-bg: #2f3441;
+  //checkbox
+  --checkbox-border: #fff;
+
+  // profile
+  --profile-sidebar-bg: #171c28;
+  --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --account-info-bg: #292e39;
+  --account-info-icon-bg: #171c28;
+
+  // Separate
+  --separate-color: #292e39;
+}

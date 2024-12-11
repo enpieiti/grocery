@@ -1,0 +1,114 @@
+@use "../abstracts";
+.dropdown {
+  position: absolute;
+  left: 0;
+  width: min(1240px, 100%);
+  padding-top: 68px;
+  display: none;
+  z-index: 100;
+  @include abstracts.screen(lg) {
+    position: initial;
+    padding-top: 0;
+  }
+  &__inner {
+    position: relative;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--dropdown-bg);
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
+    &::before {
+      content: url("../icons/dropdown-arrow.svg");
+      position: absolute;
+      top: -13px;
+      translate: -50%;
+      left: var(--arrow-left-pos);
+      filter: var(--dropdown-arrow-color);
+    }
+    @include abstracts.screen(lg) {
+      padding: 0 40px;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+.top-menu {
+  position: relative;
+  &__main {
+    width: 292px;
+    height: calc(min(620px, 100vh - 158px) - 60px);
+    border-right: 1px solid #d2d1d6;
+    overflow-y: auto;
+    @include abstracts.screen(lg) {
+      width: 100%;
+      height: auto;
+      border-right: none;
+    }
+  }
+}
+.menu-column {
+  display: flex;
+  gap: 14px;
+  + .menu-column {
+    margin-top: 22px;
+  }
+  &__icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    &-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  &__heading {
+    font-weight: 500;
+    line-height: 150%;
+    margin: 5px 0 19px;
+  }
+  &__item {
+    &--active .sub-menu {
+      display: grid;
+    }
+  }
+  &__item--active > &__link,
+  &__item:hover > &__link {
+    color: #0071dc;
+    font-weight: 500;
+  }
+  &__link {
+    display: block;
+    padding: 7px 0;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  inset: 0 0 0 292px;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 40px;
+  overflow-y: auto;
+  @include abstracts.screen(lg) {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+  &--not-main {
+    position: initial;
+    inset: initial;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    height: calc(min(620px, 100vh - 158px) - 60px);
+    @include abstracts.screen(lg) {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  }
+}

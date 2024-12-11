@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/product.js"></script>
+    <script src="../assets/js/favorite.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../templates/header-login.html");
+    </script>
+    <!-- main -->
+    <main class="container home">
+      <!-- Slideshow -->
+      <div class="home__container">
+        <div class="slideshow">
+          <div class="slideshow__inner">
+            <div class="slideshow__item">
+              <a href="#!" class="slideshow__link">
+                <img src="../assets/img/slideshow/slider-1.jpeg" alt="" class="slideshow__img" />
+              </a>
+            </div>
+            <div class="slideshow__item">
+              <a href="#!" class="slideshow__link">
+                <img src="../assets/img/slideshow/slider-2.png" alt="" class="slideshow__img" />
+              </a>
+            </div>
+            <div class="slideshow__item">
+              <a href="#!" class="slideshow__link">
+                <img src="../assets/img/slideshow/slider-3.jpg" alt="" class="slideshow__img" />
+              </a>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev">
+            <img src="../assets/icons/left.svg" class="slideshow__icon" />
+          </button>
+          <button class="slideshow__btn slideshow__btn--next">
+            <img src="../assets/icons/right.svg" class="slideshow__icon" />
+          </button>
+
+          <div class="slideshow__dots">
+            <span class="slideshow__dot" data-slide="0"></span>
+            <span class="slideshow__dot" data-slide="1"></span>
+            <span class="slideshow__dot" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Categories -->
+      <section class="home__container">
+        <div class="home__row">
+          <h2 class="home__heading">Browse Categories</h2>
+        </div>
+        <div class="home__cate row row-cols-3 row-cols-md-1">
+          <!-- Category item 1 -->
+          <div class="col">
+            <a href="#!" onclick="displayProduct(filterByPriceRange(productList, 24, 99), productId)">
+              <article class="cate-item" id="24-99">
+                <img src="../assets/img/category-item/item-1.png" alt="" class="cate-item__thumb" />
+                <div class="cate-item__info">
+                  <h3 class="cate-item__title">$24 - $99</h3>
+                  <p class="cate-item__desc">New sumatra mandeling coffe blend</p>
+                </div>
+              </article>
+            </a>
+          </div>
+          <!-- Category item 2 -->
+          <div class="col">
+            <a href="#!" onclick="displayProduct(filterByPriceRange(productList, 100, 149), productId)">
+              <article class="cate-item">
+                <img src="../assets/img/category-item/item-2.png" alt="" class="cate-item__thumb" />
+                <div class="cate-item__info">
+                  <h3 class="cate-item__title">$100 - $149</h3>
+                  <p class="cate-item__desc">Espresso arabica and robusta beans</p>
+                </div>
+              </article>
+            </a>
+          </div>
+
+          <!-- Category item 3 -->
+          <div class="col">
+            <a href="#!" onclick="displayProduct(filterByPriceRange(productList, 150, 200), productId)">
+              <article class="cate-item">
+                <img src="../assets/img/category-item/item-3.png" alt="" class="cate-item__thumb" />
+                <div class="cate-item__info">
+                  <h3 class="cate-item__title">$150 - $200</h3>
+                  <p class="cate-item__desc">Lavazza top class whole bean coffee blend</p>
+                </div>
+              </article>
+            </a>
+          </div>
+        </div>
+
+        <a href="" class="home__all" onclick="displayProduct(productList, productId);">All Items</a>
+      </section>
+      <!-- Product -->
+      <section class="home__container">
+        <div class="home__row">
+          <h2 class="home__heading">Total LavAzza 1320</h2>
+          <div class="filter-wrap">
+            <button class="filter-btn js-toggle" toggle-target="#home-filter">
+              Filter
+              <img src="../assets/icons/filter.svg" alt="" class="icon filter-btn__icon" />
+            </button>
+
+            <div id="home-filter" class="filter hide">
+              <img src="../assets/icons/arrow-up.png" alt="" class="filter__arrow" />
+              <h3 class="filter__heading">Filter</h3>
+              <div action="" class="filter__form form">
+                <div class="filter__row filter__content">
+                  <!-- Filter column 1 -->
+                  <!-- Filter column 1 -->
+                  <div class="filter__col">
+                    <label for="" class="form__label">Price</label>
+                    <div class="filter__form-group">
+                      <div class="filter__slider">
+                        <div class="filter__progress" style="left: 0%; right: 0%"></div>
+                      </div>
+
+                      <div class="filter__range-input">
+                        <input type="range" class="filter__range-min" min="1200000" max="30000000" step="300" />
+                        <input type="range" class="filter__range-max" min="1200000" max="30000000" step="300" />
+                      </div>
+                    </div>
+                    <div class="filter__form-group filter__form-group--inline">
+                      <div>
+                        <label for="" class="form__label form__label--small">Minimum</label>
+                        <div class="filter__form-text-input filter__form-text-input--small">
+                          <input type="text" name="" id="" class="filter__form-input" value="$40.00" />
+                        </div>
+                      </div>
+                      <div>
+                        <label for="" class="form__label form__label--small">Maximum</label>
+                        <div class="filter__form-text-input filter__form-text-input--small">
+                          <input type="text" name="" id="" class="filter__form-input" value="$200.00" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__separate"></div>
+                  <!-- Filter column 2 -->
+                  <div class="filter__col">
+                    <label for="" class="form__label">Weight</label>
+                    <div class="filter__form-group">
+                      <div class="form__select-wrap">
+                        <select class="form__select" name="gram">
+                          <option value="500">500</option>
+                          <option value="1000">1000</option>
+                          <option value="1500">1500</option>
+                          <option value="2000">2000</option>
+                        </select>
+                        <div class="form__name">gram</div>
+                      </div>
+                    </div>
+
+                    <div class="filter__form-group size-group">
+                      <div class="form__tags prod-info__tags">
+                        <button class="form__tag prod-info__tag prod-info__tag--active">Small</button>
+                        <button class="form__tag prod-info__tag">Medium</button>
+                        <button class="form__tag prod-info__tag">Large</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__separate"></div>
+                  <!-- Filter column 3 -->
+                  <div class="filter__col">
+                    <label for="" class="form__label">Brand</label>
+                    <div class="filter__form-group">
+                      <div class="filter__form-text-input">
+                        <input type="text" name="" id="" placeholder="Search brand name" class="filter__form-input" />
+                        <img src="../assets/icons/search.svg" alt="" class="filter__form-input-icon icon" />
+                      </div>
+                    </div>
+                    <div class="filter__form-group brand-group">
+                      <div class="form__tags prod-info__tags">
+                        <button class="form__tag prod-info__tag prod-info__tag--active">Lavazza</button>
+                        <button class="form__tag prod-info__tag">Nescafe</button>
+                        <button class="form__tag prod-info__tag">Starbucks</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__row filter__footer">
+                  <button class="btn btn--text filter__cancel js-toggle" toggle-target="#home-filter">Cancel</button>
+                  <button class="btn btn--primary filter__submit js-toggle" toggle-target="#home-filter">
+                    Show Result
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-5 row-cols-xl-4 row-cols-lg-2 row-cols-sm-1 g-3" id="productId">
+          <!-- Product card  -->
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "../templates/footer.html");
+    </script>
+    <script>
+      displayProduct(productList, productId);
+      updateFavorites();
+      updateCart();
+    </script>
+  </body>
+</html>

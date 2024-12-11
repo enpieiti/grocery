@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" codehref="../assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <script src="../assets/js/home.js"></script>
+
+    <title>Load</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #countdown {
+        font-size: 2rem;
+        color: #ff0000;
+      }
+      #message {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="pages" style="width: 500px; margin: 20px auto; display: flex; flex-direction: column; gap: 10px">
+      <a href="" class="btn btn--primary" style="display: none"></a>
+      <a href="./html/sign-in.html" class="btn btn--primary" target="_blank">Sign-in</a>
+      <a href="./html/sign-up.html" class="btn btn--primary" target="_blank">Sign-up</a>
+      <a href="./html/reset-pw.html" class="btn btn--primary" target="_blank">Reset password</a>
+      <a href="./html/reset-pw-emailed.html" class="btn btn--primary" target="_blank">Reset your password</a>
+      <a href="./html/create-new-pw.html" class="btn btn--primary" target="_blank">Create new password</a>
+      <a href="./html/home.html" class="btn btn--primary" target="_blank">Home page</a>
+      <a href="./html/home-logined.html" class="btn btn--primary" target="_blank">Home page - logined</a>
+      <a href="./html/product-detail.html" class="btn btn--primary" target="_blank">Product</a>
+      <a href="./html/favourite.html" class="btn btn--primary" target="_blank">Favourite</a>
+      <a href="./html/checkout.html" class="btn btn--primary" target="_blank">Checkout</a>
+      <a href="./html/shipping.html" class="btn btn--primary" target="_blank">Shipping</a>
+      <a href="./html/payment.html" class="btn btn--primary" target="_blank">Payment</a>
+      <a href="./html/profile.html" class="btn btn--primary" target="_blank">Profile</a>
+      <a href="./html/edit-personal-info.html" class="btn btn--primary" target="_blank">Edit profile</a>
+      <a href="./html/add-new-card.html" class="btn btn--primary" target="_blank">Add new card</a>
+    </main>
+    <h1>Redirecting to Home Page</h1>
+    <p>
+      The page will redirect in
+      <span id="countdown">10</span>
+      seconds.
+    </p>
+    <p id="message"></p>
+
+    <script>
+      let timeLeft = 10;
+
+      // Cập nhật đếm ngược mỗi giây
+      const countdown = setInterval(() => {
+        document.getElementById("countdown").textContent = timeLeft;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+          clearInterval(countdown);
+          document.getElementById("message").textContent = "Redirecting now...";
+          window.location.href = "./html/home.html"; // Đường dẫn đến trang cần chuyển
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
