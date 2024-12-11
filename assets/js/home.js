@@ -229,13 +229,13 @@ window.addEventListener("template-loaded", () => {
 
     // Hàm chuyển đến slide tiếp theo
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides; // Quay lại slide đầu khi hết
+      currentIndex = (currentIndex + 1) % totalSlides; 
       updateSlidePosition();
     }
 
     // Hàm quay lại slide trước
     function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Quay lại cuối nếu vượt quá đầu
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; 
       updateSlidePosition();
     }
 
@@ -262,42 +262,7 @@ window.addEventListener("template-loaded", () => {
   }
 });
 
-/////////
-// preview img product detail
 
-//  Select dialog : City/ District/ Town
-// window.addEventListener("template-loaded", () => {
-//   const options = document.querySelectorAll(".form__option");
-//   document.querySelector(".form__search-input").addEventListener("input", function () {
-//     const searchTerm = this.value.toLowerCase(); // Lấy giá trị nhập vào và chuyển thành chữ thường
-//     options.forEach((option) => {
-//       const optionText = option.textContent.toLowerCase(); // Lấy nội dung văn bản của mỗi mục
-//       if (optionText.includes(searchTerm)) {
-//         option.style.display = "block"; // Hiển thị mục nếu nó khớp với từ khóa tìm kiếm
-//       } else {
-//         option.style.display = "none"; // Ẩn mục nếu không khớp
-//       }
-//     });
-//   });
-//   options.forEach((option) => {
-//     option.addEventListener("click", function () {
-//       // Cập nhật giá trị cho input
-//       const cityInput = document.querySelector("#city");
-//       cityInput.value = this.textContent;
-
-//       // Đóng dialog (ẩn city dialog)
-//       const cityDialog = document.querySelector("#city-dialog");
-
-//       cityDialog.classList.remove("show");
-//       cityDialog.classList.add("hide");
-//       // Đánh dấu mục được chọn (thêm class)
-//       document.querySelectorAll(".form__option").forEach((option) => {
-//         option.classList.remove("form__option--current");
-//       });
-//       this.classList.add("form__option--current");
-//     });
-//   });
-// });
 // filter active
 window.addEventListener("template-loaded", () => {
   const filterForm = document.querySelectorAll(".filter__form-group");
