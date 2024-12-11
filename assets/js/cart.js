@@ -18,7 +18,7 @@ function updateCart() {
                       <img src="../assets/img/product/item-${item.id}.png" alt="" class="cart-preview-item__thumb" />
                     </div>
                     <h3 class="cart-preview-item__title">${item.title}</h3>
-                    <p class="cart-preview-item__price">$${item.price}</p>
+                    <p class="cart-preview-item__price">$${item.price} x ${item.quantitySold}</p>
                   </article>
                 </div>
       `;
