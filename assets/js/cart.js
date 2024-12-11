@@ -38,12 +38,12 @@ function addToCart(code) {
     carts = JSON.parse(localStorage.getItem("cartList"));
     itemIndex = carts.findIndex((item) => item.id == code);
   }
-  // = -1 là không có
+
   if (itemIndex == -1) {
     let item = productList.find((x) => x.id == code);
     item.quantitySold = quantitySpan.textContent;
     carts.push(item);
-    // button.classList.add("product-card__btn--active");
+    
     button.textContent = "Added to Cart";
   }
   if (carts.length > 0) {
@@ -167,13 +167,13 @@ function totalCart() {
 function setupLocation() {
   const options = document.querySelectorAll(".form__option");
   document.querySelector(".form__search-input").addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase(); // Lấy giá trị nhập vào và chuyển thành chữ thường
+    const searchTerm = this.value.toLowerCase(); 
     options.forEach((option) => {
-      const optionText = option.textContent.toLowerCase(); // Lấy nội dung văn bản của mỗi mục
+      const optionText = option.textContent.toLowerCase(); 
       if (optionText.includes(searchTerm)) {
-        option.style.display = "block"; // Hiển thị mục nếu nó khớp với từ khóa tìm kiếm
+        option.style.display = "block"; 
       } else {
-        option.style.display = "none"; // Ẩn mục nếu không khớp
+        option.style.display = "none"; 
       }
     });
   });
